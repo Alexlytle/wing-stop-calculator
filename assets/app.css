@@ -1,0 +1,233 @@
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+  background-color: #d0ccab;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  min-height: 115vh;
+  padding: 10px;
+}
+
+.order-hero {
+  text-align: center;
+}
+
+.order-hero h1 {
+  font-weight: 900;
+  font-size: 55px;
+  font-style: italic;
+}
+
+.order-hero img {
+  width: 100%;
+}
+
+.wing-row {
+  background-color: white;
+  border-radius: 5px;
+  border: 0.5px solid black;
+}
+
+.wing-row img {
+  width: 140px;
+}
+
+.wing-row .wing-box {
+  padding: 30px 0 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wing-row .wing-box h1 {
+  font-size: 1.375rem;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.order-values {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.order-values p {
+  font-size: 20px;
+  margin: 0;
+}
+
+.order-values .title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.order-values .number {
+  font-size: 20px;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.d-flex {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.plusminus {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  margin: 0;
+}
+
+.hungry-level {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.hungry-level li {
+  width: 100%;
+  text-align: center;
+  border-right: 1px solid #827c48;
+  border-top: 1px solid #827c48;
+  border-bottom: 1px solid #827c48;
+  padding: 15px;
+  font-size: bold;
+  cursor: pointer;
+}
+
+.hungry-level li:nth-child(1) {
+  border-left: 1px solid #827c48;
+}
+
+.tabs-trigger--active {
+  background-color: #a19958;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.tabs-trigger--not {
+  font-weight: bolder;
+}
+
+/**Slider**/
+.slider {
+  -webkit-appearance: none;
+  /* Override default CSS styles */
+  -moz-appearance: none;
+       appearance: none;
+  height: 5px;
+  /* Specified height */
+  background: #a19958;
+  /* Grey background */
+  outline: none;
+  /* Remove outline */
+  -webkit-transition: .2s;
+  /* 0.2 seconds transition on hover */
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  width: 300px;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1;
+  /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Override default look */
+  appearance: none;
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  background: white;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+  position: relative;
+  border-radius: 100%;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  background: #4CAF50;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+}
+
+.slider-wrapper {
+  position: relative;
+}
+
+output {
+  position: absolute;
+  left: 0px;
+  padding: .5em;
+  background: blue;
+  color: white;
+  cursor: pointer;
+  z-index: -1;
+}
+
+@media (max-width: 991.98px) {
+  .slider {
+    width: unset;
+  }
+  .order-values {
+    margin-bottom: 22px;
+  }
+  .wrapper {
+    min-height: 150vh;
+  }
+  .order-hero h1 {
+    font-size: 35px;
+  }
+}
+/*# sourceMappingURL=app.css.map */

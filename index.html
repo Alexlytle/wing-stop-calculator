@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wing Calculater</title>
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap">
+    <link rel="stylesheet" href="./assets/app.css">
+</head>
+<body>
+    <div id="app" >
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 order-hero" >
+                        <h1>NEED A HAND WITH YOUR ORDER?</h1>
+                       
+                        <img src="./assets/image/wing-calc-image.jpg" alt="">
+                    </div>
+                    <div class="col-md-6 order-values">
+                        <p class="title" >How many in your crew ?</p>
+                        <p class="number"> {{width}}</p>
+                        <p>How hungry?</p>
+                        <div class="d-flex">
+                            <!-- {{sliderValue}}
+                            {{width}} -->
+                            <div class="plusminus" @click="decreaseOne">
+                                <i @click="decreaseOne" class="fa-solid fa-minus"></i>
+                            </div>
+                            <input type="range" min="1" max="20" v-model="sliderValue" @input="changeWidth" class="slider" id="myRange">
+                            <div class="plusminus" @click="increaseOne">
+                                <i  class="fa-solid fa-plus"></i>
+                            </div>
+                        </div>
+                            
+                               
+                        
+                    
+                            <ul class="hungry-level"  >
+                                <li v-for="(item, index) in categories" :class="[index === active ? 'tabs-trigger--active' : 'tabs-trigger--not']" @click="activate(index)">	{{categories[index]}}</li>
+
+                            </ul>
+                    </div>
+                </div>
+                <div class="row wing-row">
+                    
+                        <div v-if="active == 0" class="col-md-6" v-for="wings in wingsSnacky[crewNumber].content">
+                          
+                                            <div class="wing-box">
+                                              
+                                           
+                                                <img :src="wings.image" alt="">
+                                                <div class="wing-content">
+                                                    <h1> {{wings.title}}</h1>
+                                                    <p>{{wings.content}}</p>
+                                                </div> 
+                                            </div>
+                                           
+                               
+                            </div>
+                            <div v-if="active == 1" class="col-md-6" v-for="wings in wingsHungry[crewNumber].content">
+                            
+                                    <div class="wing-box">
+                                              
+                                           
+                                        <img :src="wings.image" alt="">
+                                        <div class="wing-content">
+                                            <h1> {{wings.title}}</h1>
+                                            <p>{{wings.content}}</p>
+                                        </div> 
+                                    </div>
+                                               
+                                   
+                                </div>
+                                <div v-if="active == 2" class="col-md-6" v-for="wings in wingsStarving[crewNumber].content">
+                               
+                                        <div class="wing-box">
+                                              
+                                           
+                                            <img :src="wings.image" alt="">
+                                            <div class="wing-content">
+                                                <h1> {{wings.title}}</h1>
+                                                <p>{{wings.content}}</p>
+                                            </div> 
+                                        </div>
+                                                   
+                                       
+                                    </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+        <script src="./assets/script.js"></script>
+     
+</body>
+</html>
